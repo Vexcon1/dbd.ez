@@ -120,7 +120,7 @@ class Base extends EventEmitter {
           if (argerr) return msg.channel.send(argerr);
           //Managing reply
           if (obj.reply) {
-            var formatted = this.format.formatReply(obj.reply, msg, args);
+            var formatted = this.format.formatReply(obj.reply, obj.name, msg, args);
             if (formatted) {
             msg.channel.send(formatted)
             } else {
