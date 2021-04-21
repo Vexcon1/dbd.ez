@@ -70,6 +70,18 @@ class Base extends EventEmitter {
 
     this.client.on("ready", () => {
       this.emit("alive", this.client);
+      if (obj.log && obj.log == "true") {
+        console.log(` [dbd.ez | Ready]: Successfully logged into your bot ${client.user.tag}`)
+      }
+      if (obj.status && obj.activity) {
+        client.user.setPresence({
+             activity: { 
+                name: `${obj.activity}`,
+                type: 'PLAYING'
+             },
+          status: `${obj.status}`
+        })
+       }
     });
   }
 
