@@ -21,8 +21,8 @@ module.exports = class Formatter {
    * @returns Formatted string to be sent
    */
 
-  formatReply(str, msg, args) {
-    const constant_replaced = this.format(str, msg);
+  formatReply(str, name, msg, args) {
+    const constant_replaced = this.format(name, str, msg);
     const args_replace = this.manageArgs(constant_replaced, args);
     return args_replace;
   }
