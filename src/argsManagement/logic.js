@@ -1,4 +1,5 @@
-module.exports = function manageArgs(str, args) {
+module.exports = function manageArgs(name, str, args) {
+  str = str.slice(name.length)
   var message = str;
   var matchArray = message.match(/{args[1-Infinity]}/gi);
   if (matchArray) {
