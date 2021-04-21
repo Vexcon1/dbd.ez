@@ -121,7 +121,13 @@ class Base extends EventEmitter {
           //Managing reply
           if (obj.reply) {
             var formatted = this.format.formatReply(obj.reply, msg, args);
-            msg.channel.send(formatted);
+            if (formatted) {
+            msg.channel.send(formatted)
+            } else {
+                console.error(
+                "[dbd.ez | ERROR]: Unable to get args."
+              );
+            }
           }
 
           if (obj.kick) {
